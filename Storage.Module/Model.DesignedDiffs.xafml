@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application Title="Storage">
+  <BOModel>
+    <Class Name="Storage.Module.BusinessObjects.Area" ImageName="SelectTable">
+      <OwnMembers>
+        <Member Name="Pickets" ImmediatePostData="True" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Storage.Module.BusinessObjects.Picket" ImageName="SelectTableCell" />
+    <Class Name="Storage.Module.BusinessObjects.Storage" ImageName="BO_Address" />
+  </BOModel>
+  <SchemaModules>
+    <SchemaModule Name="SystemModule" Version="22.2.4.0" IsNewNode="True" />
+  </SchemaModules>
+  <Validation>
+    <Rules>
+      <RuleCriteria Id="DevExpress.Persistent.Validation.RuleCriteria_Storage.Module.BusinessObjects.Area" MessageTemplateMustSatisfyCriteria="The &quot;{TargetObject}&quot; object must satisfy the following criteria: &quot;{Criteria}&quot;." CustomMessageTemplate="Area must contain at least 1 picket." />
+      <RuleCriteria Id="DevExpress.Persistent.Validation.RuleCriteria_Storage.Module.BusinessObjects.Area_1" CustomMessageTemplate="Pickets should not be separated." />
+    </Rules>
+  </Validation>
+  <Views>
+    <DetailView Id="Area_DetailView">
+      <Items>
+        <PropertyEditor Id="Pickets" Caption="Pickets" View="Area_Pickets_ListView" />
+        <PropertyEditor Id="Storage" ImmediatePostData="True" />
+      </Items>
+    </DetailView>
+  </Views>
+</Application>
